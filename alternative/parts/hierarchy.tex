@@ -59,4 +59,39 @@
 		\end{cases}
 		\end{equation}			
 	\end{block}
+	
+	\pause	
+	
+	\begin{block}{Die von D erzeugte Sprache}
+		Sei L = $ \lbrace x \vert$ D(x) = 1 $ \rbrace$
+	\end{block}
+\end{frame}
+
+\begin{frame}{Beweis det. Time Hierarchy}
+	\begin{block}{Behauptung}
+		$L \in \DTIME(n^{1.5})$ und $L \notin \DTIME(n)$
+	\end{block}
+	\pause
+	\begin{itemize}
+		\item Wir nehmen an , dass $L \in \DTIME(n)$
+		\pause
+		\item $\Rightarrow \exists$ Turing Maschine M , die L entscheidet und für Eingabe x  				höchstens c|x| Schritte benötigt. (c ist konstant)
+		\pause
+		\item $\Leftrightarrow \forall x \in {\lbrace 0,1 \rbrace }^{*}$ D(x) = M(x)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Beweis det. Time Hierarchy}
+	\begin{itemize}
+		\item Wollen nun M auf D simulieren können
+		\pause
+		\item M simuliert auf U läuft in $c|x|\log(|x|)$
+		\pause		
+		\item Wir wählen dazu $n_0$ so groß, dass $\forall$ $n \geq n_0$ gilt :
+			$n^{1.4} > cn\log(n)$
+		\pause		
+		\item Wir finden jetzt eine Gödelnummer x , so dass $|x| > n_0$ und $M_x$ = M
+		\pause
+		\item Nun gilt $D(x) \neq M(x)$ \qedhere 
+	\end{itemize}
 \end{frame}
