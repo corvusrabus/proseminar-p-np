@@ -1,0 +1,62 @@
+\begin{frame}{Vorraussetzungen}
+	Wiederholung :
+	\begin{itemize}
+		\item Für $i\in \mathbb{N}$ beschreibt i die TM $M_i$
+		\pause
+		\item Jede TM wird von unendlich vielen $i\in \mathbb{N}$ beschrieben
+		\pause
+		\item Es existiert eine universelle TM U, die jede TM mit logarithmischem Overhead 					simulieren kann
+	\end{itemize}
+\end{frame}
+\begin{frame}{Vorraussetzungen}
+	\begin{Beispiel}[Universelle TM]
+	TM $M_i$ läuft bei Eingabe x in O(f(n))
+	$\Rightarrow$ TM U läuft bei Eingabe i, x in O(f(n)log(fn))
+	\end{Beispiel}
+\end{frame}
+\begin{frame}{Vorraussetzungen}
+	\begin{Definition}[time-constructible functions]
+		Wir nennen eine Funktion f time-constructible, falls gilt : \newline
+		f(n) ist in O(f(n)) berechenbar. 
+	\end{Definition}
+	
+	\pause	
+	
+	\begin{Definition}
+		\DTIME(f(n)) = $\lbrace$ L $\vert \exists$ deterministische Turingmaschine ,
+		 die L in O(f(n)) entscheidet $\rbrace$
+	\end{Definition}
+\end{frame}
+\begin{frame}{Deterministische Time Hierarchy}
+	\begin{Satz}[Time Hierarchy Theorem, 65]
+	Wenn f,g  time-constructible Funktionen sind die  
+	f(n)$\log$(f(n))=o(g(n)) erfüllen, dann gilt
+
+		\DTIME(f(n)) $\subsetneq$ \DTIME(g(n))
+		
+	\end{Satz}
+	
+	\pause
+
+	Frage : Warum brauchen wir den Faktor $\log$(f(n)) ?
+\end{frame}
+
+\begin{frame}{Deterministische Time Hierarchy}
+	\includegraphics[scale=0.5]{images/timehierarchy.pdf}
+\end{frame}
+
+\begin{frame}{Beweis det. Time Hierarchy}
+	Wir zeigen nur $\DTIME(n) \subsetneq \DTIME(n^{1.5})$
+	\pause
+	\begin{block}{Definition Turing Maschine D} 
+		Bei Eingabe x : Simuliere die TM $M_x$ mit Eingabe x genau für $|x|^{1.4}$ 						Schritte. Danach gebe folgendes aus :
+		\begin{equation}
+		D(x) = 
+		\begin{cases}
+			\overline{M_x(x)} & \text{falls die Simulation eine Ausgabe hatte} \\
+			0 & \text{sonst}
+			
+		\end{cases}
+		\end{equation}			
+	\end{block}
+\end{frame}
