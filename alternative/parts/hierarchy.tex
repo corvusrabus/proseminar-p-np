@@ -1,10 +1,8 @@
 \begin{frame}{Vorraussetzungen}
 	Wiederholung :
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item Für $i\in \mathbb{N}$ beschreibt i die TM $M_i$
-		\pause
 		\item Jede TM wird von unendlich vielen $i\in \mathbb{N}$ beschrieben
-		\pause
 		\item Es existiert eine universelle TM U, die jede TM mit logarithmischem Overhead 					simulieren kann
 	\end{itemize}
 \end{frame}
@@ -72,26 +70,22 @@
 		$L \in \DTIME(n^{1.5})$ und $L \notin \DTIME(n)$
 	\end{block}
 	\pause
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item Wir nehmen an , dass $L \in \DTIME(n)$
-		\pause
 		\item $\Rightarrow \exists$ Turing Maschine M , die L entscheidet und für Eingabe x  				höchstens c|x| Schritte benötigt. (c ist konstant)
-		\pause
 		\item $\Leftrightarrow \forall x \in {\lbrace 0,1 \rbrace }^{*}$ D(x) = M(x)
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Beweis det. Time Hierarchy}
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item Wollen nun M auf D simulieren können
-		\pause
 		\item M simuliert auf U läuft in $c|x|\log(|x|)$
-		\pause		
 		\item Wir wählen dazu $n_0$ so groß, dass $\forall$ $n \geq n_0$ gilt :
-			$n^{1.4} > cn\log(n)$
-		\pause		
-		\item Wir finden jetzt eine Gödelnummer x , so dass $|x| > n_0$ und $M_x$ = M
-		\pause
-		\item Nun gilt $D(x) \neq M(x)$ \qedhere 
+			$n^{1.4} > cn\log(n)$		
+		\item Nun wählen wir eine Gödelnummer x , so dass $|x| > n_0$ und $M_x$ = M
+		\item Nun gilt $D(x) \neq M(x)$ 
+		
+		\qed 
 	\end{itemize}
 \end{frame}
