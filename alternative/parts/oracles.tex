@@ -1,5 +1,37 @@
 \subsection[Orakelmaschinen]{Orakelmaschinen}
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Wiederholung Diagonalisierung}
+	\begin{KITinfoblock}{Was ist Diagonalisierung} {
+			Als Diagonalisierung wird (hier) ein Beweis bezeichnet, der nur auf den beiden folgenden
+			Eigenschaften von TM aufbaut.
+			
+			\begin{enumerate}
+				\item<2-> Die Existenz einer Repräsentation von TM durch Zeichenketten (Gödelnummer)
+				\item<3-> Die Fähigkeit eine andere TM mit geringem zusätzlichen Zeit- oder Platzbedarf zu simulieren (Universelle TM)
+			\end{enumerate}		
+		}
+	\end{KITinfoblock}
+\end{frame}
 
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Definition von Orakelmschinen}
+	\begin{KITinfoblock}{Definiton Orakel-Turingmaschine} {
+			Eine Orakel-Turingmaschine $M$ ist eine TM, die folgende zusätzliche Eigenschaften hat:
+			\begin{itemize}
+				\item<2-> ein spezielles zusätzliches Band (Orakelband) und 3 spezielle zusätzliche Zustände $q_{query}, q_{yes}, q_{no}$.
+				\item <3-> ein Orakel $O \subset \{0,1\}^*$
+				\item <4-> Wenn $M$ den Zustand $q_{query}$ betritt, ist der Folgezustand
+					\begin{itemize}
+					\item $q_{yes}$, wenn für Inhalt $s$ des Orakelbands gilt $s \in O$ und
+				    \item	$q_{no}$, wenn  $s \notin O$ 
+					\end{itemize} 
+				\item<5-> Das Orakel liefert die Antwort in einem Berechnungsschritt
+			\end{itemize}
+		}
+	\end{KITinfoblock}
+\end{frame}
 \begin{frame}
 	\begin{Satz}[Baker,Gill,Solovay, 75]
 		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
