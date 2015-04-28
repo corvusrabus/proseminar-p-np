@@ -7,36 +7,37 @@
 	\end{itemize}
 \end{frame}
 \begin{frame}{Vorraussetzungen}
-	\begin{Beispiel}[Universelle TM]
-	TM $M_i$ läuft bei Eingabe x in O(f(n))
-	$\Rightarrow$ TM U läuft bei Eingabe i, x in O(f(n)log(fn))
-	\end{Beispiel}
+	\begin{KITexampleblock}{Universelle TM}
+	TM $M_i$ läuft bei Eingabe x in $\mathcal{O}(f(n))$
+	$\Rightarrow$ TM U läuft bei Eingabe i, x in $\mathcal{O}(f(n)log(fn))$
+	\end{KITexampleblock}
 \end{frame}
 \begin{frame}{Vorraussetzungen}
-	\begin{Definition}[time-constructible functions]
+	\begin{KITinfoblock}{time-constructible functions}
 		Wir nennen eine Funktion f time-constructible, falls gilt : \newline
-		f(n) ist in O(f(n)) berechenbar. 
-	\end{Definition}
+		f(n) ist in $\mathcal{O}(f(n))$ berechenbar. 
+	\end{KITinfoblock}
 	
+	\bigskip
 	\pause	
 	
-	\begin{Definition}
+	\begin{KITinfoblock}{Definition \DTIME }
 		\DTIME(f(n)) = $\lbrace$ L $\vert \exists$ deterministische Turingmaschine ,
-		 die L in O(f(n)) entscheidet $\rbrace$
-	\end{Definition}
+		 die L in $\mathcal{O}(f(n))$ entscheidet $\rbrace$
+	\end{KITinfoblock}
 \end{frame}
 \begin{frame}{Deterministische Time Hierarchy}
 	\begin{Satz}[Time Hierarchy Theorem, 65]
-	Wenn f,g  time-constructible Funktionen sind die  
-	f(n)$\log$(f(n))=o(g(n)) erfüllen, dann gilt
+	Wenn f, g  time-constructible Funktionen sind die  
+	$f(n)\log(f(n)) \in o(g(n))$ erfüllen, dann gilt
 
-		\DTIME(f(n)) $\subsetneq$ \DTIME(g(n))
+		$\DTIME(f(n)) \subsetneq \DTIME(g(n))$
 		
 	\end{Satz}
 	
 	\pause
 
-	Frage : Warum brauchen wir den Faktor $\log$(f(n)) ?
+	Frage : Warum brauchen wir den Faktor $\log(f(n))$ ?
 \end{frame}
 
 \begin{frame}{Deterministische Time Hierarchy}
@@ -45,8 +46,9 @@
 
 \begin{frame}{Beweis det. Time Hierarchy}
 	Wir zeigen nur $\DTIME(n) \subsetneq \DTIME(n^{1.5})$
+	\bigskip
 	\pause
-	\begin{block}{Definition Turing Maschine D} 
+	\begin{KITblock}{Definition Turing Maschine D} 
 		Bei Eingabe x : Simuliere die TM $M_x$ mit Eingabe x genau für $|x|^{1.4}$ 						Schritte. Danach gebe folgendes aus :
 		\begin{equation}
 		D(x) = 
@@ -56,19 +58,19 @@
 			
 		\end{cases}
 		\end{equation}			
-	\end{block}
-	
+	\end{KITblock}
+	\bigskip
 	\pause	
 	
-	\begin{block}{Die von D erzeugte Sprache}
-		Sei L = $ \lbrace x \vert$ D(x) = 1 $ \rbrace$
-	\end{block}
+	\begin{KITblock}{Die von D erzeugte Sprache}
+		Sei L = $ \lbrace x \vert D(x) = 1  \rbrace$
+	\end{KITblock}
 \end{frame}
 
 \begin{frame}{Beweis det. Time Hierarchy}
-	\begin{block}{Behauptung}
+	\begin{KITblock}{Behauptung}
 		$L \in \DTIME(n^{1.5})$ und $L \notin \DTIME(n)$
-	\end{block}
+	\end{KITblock}
 	\pause
 	\begin{itemize}[<+->]
 		\item Wir nehmen an , dass $L \in \DTIME(n)$

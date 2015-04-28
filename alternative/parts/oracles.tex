@@ -1,4 +1,4 @@
-\subsection[Orakelmaschinen]{Orakelmaschinen}
+\subsection[Grenzen der Diagonalisierung]{Grenzen der Diagonalisierung}
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Wiederholung Diagonalisierung}
@@ -33,24 +33,29 @@
 	\end{KITinfoblock}
 \end{frame}
 \begin{frame}
-	\begin{Satz}[Baker,Gill,Solovay, 75]
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Satz von Baker-Gill-Solovay}
+	\begin{KITinfoblock}{Baker,Gill,Solovay, 75}
 		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
-	\end{Satz}
+	\end{KITinfoblock}
+	\pause
+	\begin{overprint}
+		\begin{itemize}[<+->]
+		\item Ein Beweis der Diagonalisierung verwendet gilt auch für TM mit Orakel!
+		\item $\Rightarrow$ ein Beweis für die P-NP Frage kann keine Diagonalisierung
+		verwenden!
+		\end{itemize}
+	\end{overprint}
 \end{frame}
 
-\begin{frame}{Probleme für $\P \neq \NP$}
-	\begin{itemize}[<+->]
-	\item Ein Beweis der Diagonalisierung verwendet gilt auch für TM mit Orakel!
-	\item $\Rightarrow$ ein Beweis für die P-NP Frage kann keine Diagonalisierung verwenden!
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Beweis : ${\P}^A = {\NP}^A$ }
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Beweis : ${\P}^A = {\NP}^A$ }
 	\begin{itemize}[<+->]
 	
 	\item ${\P}^A = {\NP}^A$ haben wir gerade schon gesehen:
 			Nutze einfach das Orakel A = $\mathbf{EXPCOM}$
-	\item B zu konstruieren ist schwieriger
+	\item B zu konstruieren ist schwieriger (und interessanter!)
 	\end{itemize}	
 \end{frame}
 

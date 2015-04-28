@@ -25,29 +25,30 @@
 
 \begin{frame}{Satz von Ladner}
 	\framesubtitle{Behauptung}
-	\begin{Satz}[Existenz einer \NP -intermediate Sprache, Ladner, 75]
+	\begin{KITinfoblock}{Existenz einer \NP -intermediate Sprache, Ladner, 75}
 	Wenn $\P \neq \NP$ dann gilt : \newline
 	Es existiert eine Sprache $L \in \NP \setminus \P$ die nicht \NP -vollständig ist
-	\end{Satz}
+	\end{KITinfoblock}
 \end{frame}
 \begin{frame}{Beweis von Ladner}
 	\framesubtitle{Beweisidee}
 	Wollen eine Sprache konstruieren mit diesen Eigenschaften und zeigen, dass sie in $\NP$ - intermediate ist, falls $\P \neq \NP$  :
+	
+	\bigskip
 	\pause
-	\begin{KITinfoblock}{}
-	\begin{Definition}[Die Sprache ${\SAT}_H$]
+	\begin{KITinfoblock}{Die Sprache ${\SAT}_H$}
 		Für eine Funktion $H$ : $\mathbb{N} \rightarrow \mathbb{N}$ definieren wir : \newline 	
 		${\SAT}_H = \lbrace \psi 01^{n^{H(n)}} : \psi \in \SAT$ und $ n = |\psi| \rbrace$
-	\end{Definition}
 	\end{KITinfoblock}
-
+	\bigskip
 	\pause	
 	
-	\begin{Beispiel}
-	Für $H(n) = n - 1$ und $\psi = a \land b$ gilt : \newline
+	\begin{KITexampleblock}{Beispiel für ${\SAT}_H$}
+	F\"ur $H(n) = n - 1$ und $\psi = a \land b$ gilt : \newline
 	$(a \land b) 01^{3^2} = (a \land b) 0111111111 \in {\SAT}_H $
-	\end{Beispiel}
+	\end{KITexampleblock}
 	\pause
+	\bigskip
 	${\SAT}_H$ ist also $\SAT$ mit 1er padding
 \end{frame}
 
@@ -55,19 +56,20 @@
 	\framesubtitle{Lemma}
 	Wir müssen nun also $H$ geschickt wählen !
 	\pause
-	\begin{KITinfoblock}{Eigenschaft, die wir von H wollen}
+	\begin{KITblock}{Eigenschaft, die wir von H wollen}
 		${\SAT}_H \in \P \Leftrightarrow H(n) \in O(1)$ (also $H(n) \leq C$ f\"ur alle n) 				\newline
-		und damit insbesondere $\lim_{n \to \infty}  H(n) = \infty$ für ${\SAT}_H \notin \P$
+		und damit insbesondere $\lim_{n \to \infty}  H(n) = \infty$ f\"ur ${\SAT}_H
+		\notin \P$
 		
-	\end{KITinfoblock}	
+	\end{KITblock}	
 \end{frame}
 \begin{frame}{Beweis von Ladner}
 	\framesubtitle{Nachweis der Eigenschaften von H}
- 	\begin{KITinfoblock}{}
-	\begin{Definition}
+ 	\begin{KITinfoblock}{Definition von H}
 		$H(n)$ ist die kleinste Gödelnummer $i < \log (\log (n))$ so dass für alle
-		$ x \in \{0,1\}^*$ mit $|x| \leq \log(n) $ die Turing Maschine $M_i$ genau ${\SAT}_H(x)$ 		in $i|x|^i$ Schritten berechnet. Falls dieses $i$ nicht existiert setzen wir $H(n) = 				\log(\log(n))$ 
-	\end{Definition}
+		$ x \in \{0,1\}^*$ mit $|x| \leq \log(n) $ die Turing Maschine $M_i$ genau ${\SAT}_H(x)$
+		in $i|x|^i$ Schritten berechnet. Falls dieses $i$ nicht existiert setzen wir 
+		$H(n) = \log(\log(n))$ 
 	\end{KITinfoblock}
 	\pause
 	
@@ -101,7 +103,7 @@
 	
 \end{frame}
 \begin{frame}{Beweis von Ladner}
-	\framesubtitle{${SAT}_H$ weder in $\P$ noch  $\NP$-complete}
+	\framesubtitle{${\SAT}_H$ weder in $\P$ noch  $\NP$-complete}
 	\begin{KITinfoblock}{Definiton von ${SAT}_H$}
 		Für eine Funktion $H$ : $\mathbb{N} \rightarrow \mathbb{N}$ definieren wir : \newline 	
 		${\SAT}_H = \lbrace \psi 01^{n^{H(n)}} : \psi \in \SAT$ und $ n = |\psi| \rbrace$
