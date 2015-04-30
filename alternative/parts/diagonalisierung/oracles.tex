@@ -27,7 +27,7 @@
 					\item $q_{yes}$, wenn für Inhalt $s$ des Orakelbands gilt $s \in O$ und
 				    \item	$q_{no}$, wenn  $s \notin O$ 
 					\end{itemize} 
-				\item<5-> Das Orakel liefert die Antwort in einem Berechnungsschritt
+				\item<5-> Das Orakel liefert die Antwort \alert{in einem Berechnungsschritt}
 			\end{itemize}
 		}
 	\end{KITinfoblock}
@@ -113,7 +113,9 @@
 	Wir fangen an mit $B_0 = \emptyset$. Konstruktion f\"r $B_i$ :
 	\begin{itemize}
 		\item Wähle n so , dass n größer als alle Strings in $B_{i-1}$
-		\item Lasse $M_i$ auf Eingabe $1^n$ genau $2^n / 10$ Schritte laufen
+		\item Lasse $M_i$ auf Eingabe $1^n$ genau $2^n / 10$ Schritte laufen \newline
+			(Beachte, dass $M_i$ das Orakel B hat!)
+		\item 
 	\end{itemize}
 \end{frame}
 \begin{frame}
@@ -135,5 +137,37 @@
 	  \item Wir merken uns alle Strings der L\"ange n, die $M_i$ an fragt!
 	\end{itemize}
 	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Konstruktion von B}
+	\begin{itemize}[<+->]
+	  \item Wir definieren nun $B_{i+1}$ wie folgt :
+	  \item Wenn $M_i$ nicht gehalten hat : $B_{i+1} = B_i$
+	  \item ansonsten : \begin{itemize}
+	    \item $M_i$ akzeptiert $1^n$ : Wir definieren, dass kein String der Länge n
+	    in B ist.
+	    \item $M_i$ lehnt ab : Wähle $x \in {\lbrace 0,1 \rbrace}^n$, welches nicht
+	    von $M_i$ an gefragt wurde und setze $B_{i+1} = B_i \cup \lbrace x \rbrace$
+	    \item warum existiert dieses x?
+	    \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Beweis Schluss}
 	
+	\begin{itemize}[<+->]
+	  \item Haben oben ein gesehen, dass $U_B \in {\NP}^B$
+	  \item Und f\"ur jede polynomiell beschränkte TM M existiert ein i,so dass 
+	  	\begin{itemize}
+	  	  \item M = $M_i$
+	  	  \item M auf der Eingabe $1^i$ weniger als $2^i / 10 $ Schritte benötigt
+	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^i \in U_B$ falsch
+	  	  beantwortet
+	  	 \end{itemize}
+	  	\item $\Rightarrow U_B \notin {\P}^B$ und damit ${P}^B \neq {\NP}^B$ \qed
+	\end{itemize}
 \end{frame}
