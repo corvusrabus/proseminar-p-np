@@ -36,48 +36,43 @@
 	\frametitle{Time Hierarchy}
 	\framesubtitle{Deterministische Time Hierarchy}
 	
-	\begin{KITinfoblock}{Satz Time Hierarchy Theorem, 65}
-	Wenn f, g  time-constructible Funktionen sind die  
-	$f(n)\log(f(n)) \in o(g(n))$ erfüllen, dann gilt
-
-		$\DTIME(f(n)) \subsetneq \DTIME(g(n))$
+	\begin{KITinfoblock}{Satz: Time Hierarchy Theorem, 65}
+	Seien $f, g$  time-constructible mit  
+	$f(n)\log(f(n)) \in o(g(n))$ , dann gilt
+	$\DTIME(f(n)) \subsetneq \DTIME(g(n))$
 		
 	\end{KITinfoblock}
-	
+	\bigskip
+	\begin{columns}
+	\column{.5\textwidth}
+	\includegraphics[scale=0.3]{images/timehierarchy.pdf}
+		
 	\pause
-
+	\column{.5\textwidth}
 	Frage : Warum brauchen wir den Faktor $\log(f(n))$ ?
-\end{frame}
-
-\begin{frame}
-	\frametitle{Time Hierarchy}
-	\framesubtitle{Deterministische Time Hierarchy}
-	\includegraphics[scale=0.5]{images/timehierarchy.pdf}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Time Hierarchy}
 	\framesubtitle{{Beweis det. Time Hierarchy}}
-	Wir zeigen nur $\DTIME(n) \subsetneq \DTIME(n^{1.5})$
+	Wir zeigen $\DTIME(n) \subsetneq \DTIME(n^{1.5})$
 	\bigskip
 	\pause
-	\begin{KITblock}{Definition Turing Maschine D} 
-		Bei Eingabe x : Simuliere die TM $M_x$ mit Eingabe x genau für $|x|^{1.4}$ 						Schritte. Danach gebe folgendes aus :
-		\begin{equation}
+	\begin{KITinfoblock}{Definition Turing Maschine D} 
+		Bei Eingabe $x$ : Simuliere die TM $M_x$ mit Eingabe $x$ genau für $|x|^{1.4}$
+		 						Schritte. Danach gebe folgendes aus :
+		\begin{equation*}
 		D(x) = 
 		\begin{cases}
 			\overline{M_x(x)} & \text{falls die Simulation eine Ausgabe hatte} \\
 			0 & \text{sonst}
 			
 		\end{cases}
-		\end{equation}			
-	\end{KITblock}
-	\bigskip
-	\pause	
-	
-	\begin{KITblock}{Die von D erzeugte Sprache}
-		Sei L = $ \lbrace x \vert D(x) = 1  \rbrace$
-	\end{KITblock}
+		\end{equation*}			
+		\bigskip
+		Sei $L =  \lbrace x \vert D(x) = 1  \rbrace$ die von $D$ erzeugte Sprache
+	\end{KITinfoblock}
 \end{frame}
 
 \begin{frame}
@@ -89,9 +84,11 @@
 	\pause
 	\begin{itemize}[<+->]
 		\item Wir nehmen an , dass $L \in \DTIME(n)$
-		\item $\Rightarrow \exists$ Turing Maschine M , die L entscheidet und für Eingabe x
-		 		höchstens c|x| Schritte benötigt. (c ist konstant)
-		\item $\Leftrightarrow \forall x \in {\lbrace 0,1 \rbrace }^{*}$ D(x) = M(x)
+		\item $\Rightarrow \exists$ Turing Maschine $M$ , die $L$ entscheidet \newline
+		($\Leftrightarrow \forall x \in {\lbrace 0,1 \rbrace }^{*}$ D(x) = M(x)) und
+		für Eingabe x höchstens c|x| Schritte benötigt. (c ist konstant)
+		\item Wir konstruieren Wiederspruch , indem wir $D$ eine Gödelnummer $i$ mit
+			$M_i = M$ als Eingabe geben.
 	\end{itemize}
 \end{frame}
 
@@ -99,13 +96,14 @@
 	\frametitle{Time Hierarchy}
 	\framesubtitle{Beweis det. Time Hierarchy}
 	\begin{itemize}[<+->]
-		\item Wollen nun M auf D simulieren können
+		\item Wollen dieses $i$ groß genug, dass D für $M_i$ eine Ausgabe erhält !
 		\item M simuliert auf U läuft in $c|x|\log(|x|)$
 		\item Wir wählen dazu $n_0$ so groß, dass $\forall$ $n \geq n_0$ gilt :
 			$n^{1.4} > cn\log(n)$		
 		\item Nun wählen wir eine Gödelnummer x , so dass $|x| > n_0$ und $M_x$ = M
-		\item Nun gilt $D(x) \neq M(x)$ 
-		
-		\qed 
+		\item Damit läuft $M_i$ in der Simulation in D komplett durch und D invertiert
+			das Ergebniss
+		\item Nun gilt $D(x) \neq M(x)$ 	\qed 
+		\item Beweis ähnlich auf allgemeinen Fall übertragbar
 	\end{itemize}
 \end{frame}

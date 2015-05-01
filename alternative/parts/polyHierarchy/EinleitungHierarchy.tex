@@ -1,0 +1,57 @@
+\begin{frame}
+	\frametitle{Einleitung}
+	\framesubtitle{Beispiele}
+	
+	\begin{KITinfoblock}{Definition $\mathbf{INDSET}$}
+	Sei $\mathbf{INDSET} = \lbrace \langle G,k \rangle $ : Graph $G$ hat ein
+	independent set , welches Größe k hat $\rbrace$
+	\end{KITinfoblock}
+	\bigskip
+	\pause
+	Bekannt : $\mathbf{INDSET} \in \NPC$
+	\bigskip
+	\pause
+	\begin{KITinfoblock}{Definition $\mathbf{EXACT INDSET}$}
+	Sei $\mathbf{EXACT INDSET} = \lbrace \langle G,k \rangle $ : das größte
+	independent set in G hat Größe genau k$\rbrace$ \newline
+	=$\lbrace \langle G,k \rangle$ : $\exists$ independent set der Größe k in $G$
+	und $\forall$ independent sets in $G$ haben Größe $\leq k \rbrace$
+	\end{KITinfoblock}
+\end{frame}
+\begin{frame}
+	\frametitle{Einleitung}
+	\framesubtitle{Die Klasse $\sum_{2}^{p} $}
+	
+	\begin{overprint}
+	\begin{KITinfoblock}{$\mathbf{\only<2>{EXACT}INDSET}$}
+	Sei $\mathbf{INDSET} = \lbrace \langle G,k \rangle $ : $\exists$ independent
+	set in G, welches Größe k hat \only<2>{und $\forall$ independent sets in $G$
+	haben Größe $\leq k$}$\rbrace$
+	\end{KITinfoblock}
+	\end{overprint}
+	
+	\bigskip
+	\begin{overprint}
+	
+
+	\begin{KITinfoblock}{\only<1>{Wiederholung \NP} \only<2>{Definition
+	$\sum_{2}^{p} $ }}
+		\only<1>{ \NP} \only<2>{$\sum_{2}^{p} $ }
+		ist die Menge aller Sprachen L f\"ur die gilt : \newline
+		Es gibt deterministische polynomielle TM $M$ und ein Polynom $q$ so dass :
+		\newline
+		
+		$x \in L \Leftrightarrow \exists u \in {\lbrace 0,1 \rbrace }^{q(|x|)}$
+		\only<2>{$\forall v \in {\lbrace 0,1 \rbrace }^{q(|x|)}$}
+		$M(x,u \only<2>{,v}) = 1$
+	\end{KITinfoblock}
+	\end{overprint}
+	
+\end{frame}
+\begin{frame}
+	\frametitle{Einleitung}
+	\framesubtitle{Noch mehr Quantoren?}
+	\begin{center}
+		\includegraphics[scale = 0.15]{images/more.jpg}
+	\end{center}
+\end{frame}

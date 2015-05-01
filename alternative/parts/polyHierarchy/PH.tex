@@ -1,5 +1,34 @@
 \begin{frame}
-	hier muss noch die Definition von $\PH$ rein ;)
+	\frametitle{Die Klasse $\PH$}
+	\framesubtitle{Definition von $\PH$}
+	
+	\begin{KITinfoblock}{Definition	$\sum_{i}^{p} $ }
+		$\sum_{i}^{p} $ ist die Menge aller Sprachen L f\"ur die gilt : \newline
+		Es gibt deterministische polynomielle TM $M$ und ein Polynom $q$ so dass :
+		\newline
+		
+		$x \in L \Leftrightarrow \exists u_1 \in {\lbrace 0,1 \rbrace }^{q(|x|)}$
+		$\forall u_2 \in {\lbrace 0,1 \rbrace }^{q(|x|)}$
+		$\ldots \mathcal{Q}_i u_i \in {\lbrace 0,1 \rbrace }^{q(|x|)}$
+		$M(x,u_1 ,\ldots , u_i) = 1$	\newline
+		
+		wobei $\mathcal{Q}_i$ entweder $\forall$ oder $\exists$ beschreibt,
+		abh\"angig davon ob $i$ gerade oder ungerade ist
+	\end{KITinfoblock}
+	\pause
+	\bigskip
+	\only<2>{
+	\begin{KITinfoblock}{Definition $\PH$}
+		Die polynomielle Hierarchie ist $\PH = {\cup}_{i \in \mathbb{N}} \sum_{i}^{p}$
+	\end{KITinfoblock}
+	}
+	\only<3>{
+		\begin{itemize}
+		  \item Man sieht : $\sum_{1}^{p} = \NP$
+		  \item $\Pi_{i}^{p} := co\sum_{i}^{p}$
+		  \item $\sum_{i}^{p} \subseteq \Pi_{i+1}^{p} \subseteq \sum_{i+2}^{p}$
+		\end{itemize}
+	}
 \end{frame}
 \begin{frame} 
 	\frametitle{Die Klasse $\PH$}
@@ -54,4 +83,29 @@
 		\item Damit $L \in \NP$ und da $\P = \NP$ vorausgesetzt, folgt $L \in \P$
 		\qed
 	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Die Klasse $\PH$}
+	\framesubtitle{\PH Vollst\"andigkeit}
+	
+	Wir definieren $\PH$ Vollst\"andigkeit analog zur $\NP$ Vollständigkeit und
+	erhalten damit :
+	\pause
+	\bigskip
+	
+	\begin{KITinfoblock}{Überlegung zur $\PH$ Vollst\"andigkeit}
+		Wenn eine $\PH$-vollst\"andige Sprache L existiert dann existiert ein $i$
+		so dass $\PH = \sum_{i}^{p}$
+	\end{KITinfoblock}
+	\bigskip
+	\pause
+	Beweis :
+	\begin{itemize}[<+->]
+	  \item Da $\PH = \cup_{k \in \mathbb{N}} \sum_{k}^{p}$   $\exists i$ so dass
+	  $L \in \sum_{i}^{p}$
+	  \item K\"onnen durch $\PH$ Vollständigkeit jedes $L' \in \PH$ in pol. Zeit
+	  auf L reduzieren
+	  \item und damit also auch $L' \in \sum_{i}^{p}$	\qed
+	\end{itemize}
+	
 \end{frame}
