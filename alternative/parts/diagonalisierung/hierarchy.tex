@@ -1,4 +1,6 @@
-\begin{frame}{Vorraussetzungen}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{Vorraussetzungen}
 	Wiederholung :
 	\begin{itemize}[<+->]
 		\item Für $i\in \mathbb{N}$ beschreibt i die TM $M_i$
@@ -6,13 +8,17 @@
 		\item Es existiert eine universelle TM U, die jede TM mit logarithmischem Overhead 					simulieren kann
 	\end{itemize}
 \end{frame}
-\begin{frame}{Vorraussetzungen}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{Vorraussetzungen}
 	\begin{KITexampleblock}{Universelle TM}
 	TM $M_i$ läuft bei Eingabe x in $\mathcal{O}(f(n))$
 	$\Rightarrow$ TM U läuft bei Eingabe i, x in $\mathcal{O}(f(n)log(fn))$
 	\end{KITexampleblock}
 \end{frame}
-\begin{frame}{Vorraussetzungen}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{Vorraussetzungen}
 	\begin{KITinfoblock}{Definition Time-constructible functions}
 		Wir nennen eine Funktion f time-constructible, falls gilt : \newline
 		f(n) ist in $\mathcal{O}(f(n))$ berechenbar. 
@@ -26,7 +32,9 @@
 		 die L in $\mathcal{O}(f(n))$ entscheidet $\rbrace$
 	\end{KITinfoblock}
 \end{frame}
-\begin{frame}{Deterministische Time Hierarchy}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{Deterministische Time Hierarchy}
 	
 	\begin{KITinfoblock}{Satz Time Hierarchy Theorem, 65}
 	Wenn f, g  time-constructible Funktionen sind die  
@@ -41,11 +49,15 @@
 	Frage : Warum brauchen wir den Faktor $\log(f(n))$ ?
 \end{frame}
 
-\begin{frame}{Deterministische Time Hierarchy}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{Deterministische Time Hierarchy}
 	\includegraphics[scale=0.5]{images/timehierarchy.pdf}
 \end{frame}
 
-\begin{frame}{Beweis det. Time Hierarchy}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{{Beweis det. Time Hierarchy}}
 	Wir zeigen nur $\DTIME(n) \subsetneq \DTIME(n^{1.5})$
 	\bigskip
 	\pause
@@ -68,19 +80,24 @@
 	\end{KITblock}
 \end{frame}
 
-\begin{frame}{Beweis det. Time Hierarchy}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{Beweis det. Time Hierarchy}
 	\begin{KITblock}{Behauptung}
 		$L \in \DTIME(n^{1.5})$ und $L \notin \DTIME(n)$
 	\end{KITblock}
 	\pause
 	\begin{itemize}[<+->]
 		\item Wir nehmen an , dass $L \in \DTIME(n)$
-		\item $\Rightarrow \exists$ Turing Maschine M , die L entscheidet und für Eingabe x  				höchstens c|x| Schritte benötigt. (c ist konstant)
+		\item $\Rightarrow \exists$ Turing Maschine M , die L entscheidet und für Eingabe x
+		 		höchstens c|x| Schritte benötigt. (c ist konstant)
 		\item $\Leftrightarrow \forall x \in {\lbrace 0,1 \rbrace }^{*}$ D(x) = M(x)
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Beweis det. Time Hierarchy}
+\begin{frame}
+	\frametitle{Time Hierarchy}
+	\framesubtitle{Beweis det. Time Hierarchy}
 	\begin{itemize}[<+->]
 		\item Wollen nun M auf D simulieren können
 		\item M simuliert auf U läuft in $c|x|\log(|x|)$
