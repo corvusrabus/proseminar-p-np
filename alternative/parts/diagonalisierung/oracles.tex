@@ -1,4 +1,4 @@
-\subsection[Grenzen der Diagonalisierung]{Grenzen der Diagonalisierung}
+
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Wiederholung Diagonalisierung}
@@ -31,6 +31,40 @@
 			\end{itemize}
 		}
 	\end{KITinfoblock}
+\end{frame}
+\begin{frame} 
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Defintion von Orakelmaschinen}
+	\begin{KITinfoblock}{Komplexitätsklassen von Orakelmaschinen}
+		Für jedes $0 \in \{0,1\}^*$ ist ${\P}^O$ die Menge aller Sprachen, die eine det. Orakel-TM mit Orakel $O$ entscheiden kann.
+		${\NP}^O$ analog für nichtdet. Orakel-TM.
+		
+	\end{KITinfoblock}
+\end{frame}
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Beispiele für Orakelmaschinen}
+	\heading{$\overline{SAT}$}
+	\begin{itemize}[<+->]
+		\item   Für $\overline{SAT}$, Sprache der nicht erfüllbaren Formeln, gilt $\overline{SAT} \in {\P}^{SAT}$.
+		\item   Mit  Orakel $SAT$ kann TM in $\mathcal{O}(1)$ entscheiden, ob $\varphi \in SAT$ und gegenteilige Antwort ausgeben.
+	\end{itemize}
+	\bigskip
+	\pause
+	\heading{$EXPCOM$} 
+	\begin{itemize} [<+->]
+		\item Sei $EXPCOM$ folgende Sprache: \[\{(M,x,1^n) : M \ berechnet \ 1 \ bei \ Eingabe \ x \ innerhalb \ von \ 2^n \ Schritten  \}
+		 \] 
+			Dann gilt ${\P}^{EXPCOM} = {\NP}^{EXPCOM} = \EXP$.
+			\item Wegen Orakel aus $\EXP$  $ \Rightarrow \EXP \subseteq {\P}^{EXPCOM} $
+			\item Außerdem: $M$ eine nichtdet. TM mit Orakel $EXPCOM$: 
+				\begin{itemize}[<+->]
+					\item Ausführung von $M$ det. in Exponentialzeit simulieren
+					\item Orakelaufruf in Exponentialzeit simulieren (max $2^{|x|} \cdot 2^{q(|x|)}$ Aufrufe)	
+				\end{itemize}
+			\item $\Rightarrow \EXP \subseteq{\P}^{EXPCOM} \subseteq {\NP}^{EXPCOM} \subseteq \EXP$
+			
+	\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}

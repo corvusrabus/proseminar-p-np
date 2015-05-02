@@ -54,34 +54,48 @@
 	\heading{Beweis von $ \P = \NP \Rightarrow \PH = \P$}
 	\begin{itemize}[<+->]
 		\item Sei $\P = \NP$, beweisen über Induktion $\sum_{i}^{p},\prod_{i}^{p} \subseteq \P$ für alle $i$
-		\item IA: $i=1$, nach Voraussetzung: $\sum_{1}^{p} = \NP$,\quad$\prod_{1}^{p} = \coNP$ \newline
-				und $\P = \co\P = \NP = \coNP$ gilt
-		\item IV: Es gelte  $\sum_{i-1}^{p} \subseteq \P$ für $i-1 \in \mathbb{N}$  
-		\item Anm: $\prod_{i-1}^{p}$ besteht aus Komplementsprachen der Sprachen in $\sum_{i-1}^{p}$ \newline $\P$ ist abgeschlossen unter Komplementbildung $\Rightarrow$  $\prod_{i-1}^{p} \subseteq \P$ unter IV.
 		\bigskip
-		\item IS: Sei $L \in \sum_{i}^{p}$, dann ex. TM $M$ und Polynom $q$ so, dass \newline
-		\begin{align}
-			x \in L \Leftrightarrow  \exists u_1 \in \{0,1\}^{q(|x|)} &\forall u_2  \in \{0,1\}^{q(|x|)} ... \ Q_i u_i \in \{0,1\}^{q(|x|)}  \notag \\
-			&M(x,u_1,u_2,...,u_i)=1 \notag
-		\end{align}
-		gilt (Definition)
+		\item \galert{IA}: $i=1$, nach Voraussetzung: $\sum_{1}^{p} = \NP$,\quad$\prod_{1}^{p} = \coNP$ \newline
+				und $\P = \co\P = \NP = \coNP$ gilt
+		\bigskip
+		\item \galert{IV}: Es gelte  $\sum_{i-1}^{p} \subseteq \P$ für $i-1 \in \mathbb{N}$  
+		\item Anm: $\prod_{i-1}^{p}$ besteht aus Komplementsprachen der Sprachen in $\sum_{i-1}^{p}$ \newline $\P$ ist abgeschlossen unter Komplementbildung $\Rightarrow$  $\prod_{i-1}^{p} \subseteq \P$ unter IV.
+		
+	 
 		
 	\end{itemize}
 \end{frame} 
+
+	
 \begin{frame}
 	\frametitle{Die Klasse $\PH$}
 	\framesubtitle{Beweis}
 	\begin{itemize}[<+->]
+		\item \galert{IS}: Sei $L \in \sum_{i}^{p}$, dann ex. TM $M$ und Polynom $q$ so, dass \newline
+		\begin{align}
+			x \in L \Leftrightarrow  \exists u_1 \in \{0,1\}^{q(|x|)} &\forall u_2  \in \{0,1\}^{q(|x|)} ... \ Q_i u_i \in \{0,1\}^{q(|x|)}  \notag \\
+			&M(x,u_1,u_2,...,u_i)=1 \notag
+			(Definition)
+		\end{align}
+		gilt
+		\bigskip
 		\item Definiere Sprache $L'$
 		\begin{align}
 		(x,u_1) \in L' \Leftrightarrow \forall u_2 \in &\{0,1\}^{q(|x|)} ... \ Q_i u_i \in \{0,1\}^{q(|x|)} \notag \\ &M(x,u_1,u_2, ... u_i) = 1 \notag 
 		\end{align}
-		\item $L'$ ist in $\prod_{i-1}^{p}$ \quad (für $\bar{L'}$ alle Quantoren und $M$ negieren $\Rightarrow \bar{L'} \in \sum_{i-1}^{p}$)
-		\item Nach IV gilt: $ \quad \prod_{i-1}^{p} \in \P  \quad \Rightarrow \quad L' \in \P$
-		\item Damit ex. det. TM $M'$, die $L'$ in polynom. Zeit berechnet
-		\item  \[x \in L \Leftrightarrow \exists u_1 \in \{0,1\}^{q(|x|)} M'(x,u_1) = 1 \] 
-		\item Damit $L \in \NP$ und da $\P = \NP$ vorausgesetzt, folgt $L \in \P$
-		\qed
+	
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Die Klasse $\Huge$}
+	\framesubtitle{Beweis}
+		\begin{itemize}[<+->]
+			\item $L'$ ist in $\prod_{i-1}^{p}$ \quad (für $\overline{L'}$ alle Quantoren und $M$ negieren $\Rightarrow \overline{L'} \in \sum_{i-1}^{p}$)
+			\item Nach IV gilt: $ \quad \prod_{i-1}^{p} \in \P  \quad \Rightarrow \quad L' \in \P$
+			\item Damit ex. det. TM $M'$, die $L'$ in polynom. Zeit berechnet
+			\item  \[x \in L \Leftrightarrow \exists u_1 \in \{0,1\}^{q(|x|)} M'(x,u_1) = 1 \] 
+			\item Damit $L \in \NP$ und da $\P = \NP$ vorausgesetzt, folgt $L \in \P$
+			\qed
 	\end{itemize}
 \end{frame}
 \begin{frame}
