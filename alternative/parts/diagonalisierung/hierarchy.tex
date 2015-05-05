@@ -13,7 +13,7 @@
 	\framesubtitle{Vorraussetzungen}
 	\begin{KITexampleblock}{Universelle TM}
 	TM $M_i$ läuft bei Eingabe x in $\mathcal{O}(f(n))$
-	$\Rightarrow$ TM U läuft bei Eingabe i, x in $\mathcal{O}(f(n)log(fn))$
+	$\Rightarrow$ TM U läuft bei Eingabe i, x in $\mathcal{O}(f(n)log(f(n)))$
 	\end{KITexampleblock}
 \end{frame}
 \begin{frame}
@@ -87,21 +87,26 @@
 		\item $\Rightarrow \exists$ Turing Maschine $M$ , die $L$ entscheidet \newline
 		($\Leftrightarrow \forall x \in {\lbrace 0,1 \rbrace }^{*}$ D(x) = M(x)) und
 		für Eingabe x höchstens c|x| Schritte benötigt. (c ist konstant)
-		\item Wir konstruieren Wiederspruch , indem wir $D$ eine Gödelnummer $i$ mit
-			$M_i = M$ als Eingabe geben.
+		\item Wir konstruieren Wiederspruch , indem wir $D$ eine Gödelnummer $x$ mit
+			$M_x = M$ als Eingabe geben.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Time Hierarchy}
 	\framesubtitle{Beweis det. Time Hierarchy}
+	\begin{KITinfoblock}{Definition Turing Maschine D} 
+		Bei Eingabe $x$ : Simuliere die TM $M_x$ mit Eingabe $x$ genau für $|x|^{1.4}$
+		 Schritte. Danach gebe das invertierte Ergebniss von $M_x$	aus			
+	\end{KITinfoblock}
+	
 	\begin{itemize}[<+->]
-		\item Wollen dieses $i$ groß genug, dass D für $M_i$ eine Ausgabe erhält !
+		\item Wollen $|x|$ groß genug, dass D für $M_x$ eine Ausgabe erhält !
 		\item M simuliert auf U läuft in $c|x|\log(|x|)$
 		\item Wir wählen dazu $n_0$ so groß, dass $\forall$ $n \geq n_0$ gilt :
 			$n^{1.4} > cn\log(n)$		
-		\item Nun wählen wir eine Gödelnummer x , so dass $|x| > n_0$ und $M_x$ = M
-		\item Damit läuft $M_i$ in der Simulation in D komplett durch und D invertiert
+		\item Nun wählen wir eine Gödelnummer x , so dass $|x| > n_0$ und $M_x = M$
+		\item Damit läuft $M_x$ in der Simulation in D komplett durch und D invertiert
 			das Ergebniss
 		\item Nun gilt $D(x) \neq M(x)$ 	\qed 
 		\item Beweis ähnlich auf allgemeinen Fall übertragbar
