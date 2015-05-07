@@ -38,7 +38,7 @@
 \end{frame}
 \begin{frame} 
 	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Definition von Orakelmaschinen}
+	\framesubtitle{Satz von Baker-Gill-Solovay}
 	\begin{KITinfoblock}{Komplexitätsklassen von Orakelmaschinen}
 		Für jedes $\mathbf{O} \subseteq \{0,1\}^*$ ist ${\P}^{\mathbf{O}}$ die Menge
 		aller Sprachen, die eine det. Orakel-TM mit Orakel $\mathbf{O}$ entscheiden
@@ -46,44 +46,22 @@
 		${\NP}^{\mathbf{O}}$ analog für nichtdet. Orakel-TM.
 		
 	\end{KITinfoblock}
-\end{frame}
-\begin{frame}
-	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Beispiele für Orakelmaschinen}
-	\heading{$\overline{\SAT}$}
-	\begin{itemize}[<+->]
-		\item   Für $\overline{\SAT}$, Sprache der nicht erfüllbaren Formeln, gilt
-		$\overline{SAT} \in {\P}^{\SAT}$.
-		\item   Mit  Orakel $\SAT$ kann TM in $\mathcal{O}(1)$ entscheiden, ob
-		$\varphi \in \SAT$ und gegenteilige Antwort ausgeben.
-	\end{itemize}
 	\bigskip
 	\pause
-	\heading{$\mathbf{EXPCOM}$} 
-	\begin{itemize} [<+->]
-		\item Sei $\mathbf{EXPCOM}$ folgende Sprache: \[\{(M,x,1^n) : M \ berechnet \ 1 \ bei \ Eingabe \ x \ innerhalb \ von \ 2^n \ Schritten  \}
-		 \] 
-			Dann gilt ${\P}^{\mathbf{EXPCOM}} = {\NP}^{\mathbf{EXPCOM}} = \EXP$.
-			\item Wegen Orakel aus $\EXP$  $ \Rightarrow \EXP \subseteq {\P}^{\mathbf{EXPCOM}} $
-			\item Außerdem: $M$ eine nichtdet. TM mit Orakel $\mathbf{EXPCOM}$: 
-				\begin{itemize}[<+->]
-					\item Ausführung von $M$ det. in Exponentialzeit simulieren
-					\item Orakelaufruf in Exponentialzeit simulieren (max $2^{|x|} \cdot 2^{q(|x|)}$ Aufrufe)	
-				\end{itemize}
-			\item $\Rightarrow \EXP \subseteq{\P}^{\mathbf{EXPCOM}} \subseteq {\NP}^{\mathbf{EXPCOM}} \subseteq \EXP$
-			
-	\end{itemize}
+	\begin{KITinfoblock}{Satz (Baker,Gill,Solovay, 75)}
+		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
+	\end{KITinfoblock}
+	
 \end{frame}
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Satz von Baker-Gill-Solovay}
+	\framesubtitle{relativierende Beweise}
 	\begin{KITinfoblock}{Satz (Baker,Gill,Solovay, 75)}
 		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
 	\end{KITinfoblock}
 	\bigskip
-	\pause
 	\begin{overprint}
-		\only<2-3>{
+		\only<1-2>{
 		
 		\begin{KITinfoblock}{relativierende Beweise}
 			Wir nennen einen Beweis, der auch für TM mit Orakel gilt, einen \newline
@@ -102,13 +80,33 @@
 
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Beweis : ${\P}^A = {\NP}^A$ }
+	\framesubtitle{Beispiele für Orakelmaschinen}
+	\heading{$\overline{\SAT}$}
 	\begin{itemize}[<+->]
-	
-	\item ${\P}^A = {\NP}^A$ haben wir gerade schon gesehen:
-			Nutze einfach das Orakel A = $\mathbf{EXPCOM}$
-	\item B zu konstruieren ist schwieriger (und interessanter!)
-	\end{itemize}	
+		\item   Für $\overline{\SAT}$, Sprache der nicht erfüllbaren Formeln, gilt
+		$\overline{SAT} \in {\P}^{\SAT}$.
+		\item   Mit  Orakel $\SAT$ kann TM in $\mathcal{O}(1)$ entscheiden, ob
+		$\varphi \in \SAT$ und gegenteilige Antwort ausgeben.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Beweis : ${\P}^A = {\NP}^A$ }
+	\heading{Beweis des Satzes von Baker:} 
+	\begin{itemize} [<+->]
+		\item Sei $\mathbf{EXPCOM}$ folgende Sprache: \[\{(M,x,1^n) : M \ berechnet \ 1 \ bei \ Eingabe \ x \ innerhalb \ von \ 2^n \ Schritten  \}
+		 \] 
+			Dann gilt ${\P}^{\mathbf{EXPCOM}} = {\NP}^{\mathbf{EXPCOM}} = \EXP$.
+			\item Wegen Orakel aus $\EXP$  $ \Rightarrow \EXP \subseteq {\P}^{\mathbf{EXPCOM}} $
+			\item Außerdem: $M$ eine nichtdet. TM mit Orakel $\mathbf{EXPCOM}$: 
+				\begin{itemize}[<+->]
+					\item Ausführung von $M$ det. in Exponentialzeit simulieren
+					\item Orakelaufruf in Exponentialzeit simulieren (max $2^{|x|} \cdot 2^{q(|x|)}$ Aufrufe)	
+				\end{itemize}
+			\item $\Rightarrow \EXP \subseteq{\P}^{\mathbf{EXPCOM}} \subseteq {\NP}^{\mathbf{EXPCOM}} \subseteq \EXP$
+			
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -121,8 +119,7 @@
 	\pause
 	
 	\begin{itemize}[<+->]
-		\item Wir sehen sofort ein : $U_B \in {\NP}^B$ , da eine nicht det. TM
-			ein Zertifikat raten kann
+		\item Warum gilt $U_B \in {\NP}^B$?
 		\item M\"ussen also nur noch B so konstruieren, dass $U_B \notin {\P}^B$
 	\end{itemize}
 \end{frame}
@@ -131,10 +128,10 @@
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Konstruktion von B}
 	Wir konstruieren eine Folge von Sprachen $(B_i)_{i \in \mathbb{N}}$ so , dass 
-	$B = \lim_{n \to \infty} B_i$	
+	$B = \lim_{i \to \infty} B_i$	
 	\begin{itemize}[<+->]
-		\item Wie stellen wir sicher, dass alle Turing Maschinen $U_B$ nicht
-			in polynomieller Zeit entscheiden können?
+		\item Wie stellen wir sicher, dass keine Turing Maschine $U_B$
+			in polynomieller Zeit entscheiden kann?
 		\item Tipp: Die Menge aller Turing Maschinen ist abzählbar
 	\end{itemize}
 \end{frame}

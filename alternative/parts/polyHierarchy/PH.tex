@@ -17,18 +17,27 @@
 	\end{KITinfoblock}
 	\pause
 	\bigskip
-	\only<2>{
+	
 	\begin{KITinfoblock}{Definition $\PH$}
 		Die polynomielle Hierarchie ist $\PH = {\cup}_{i \in \mathbb{N}} \sum_{i}^{p}$
 	\end{KITinfoblock}
-	}
-	\only<3>{
-		\begin{itemize}
+\end{frame}
+\begin{frame}
+	\begin{columns}
+	\column{.5\textwidth}
+	\begin{overprint}
+	\only<1>{\includegraphics[page=1, scale= 0.5]{images/polyhierarchy2.pdf}}
+	\only<2>{\includegraphics[page=2, scale= 0.5]{images/polyhierarchy2.pdf}}
+	\only<3>{\includegraphics[page=3, scale= 0.5]{images/polyhierarchy2.pdf}}
+	\only<4>{\includegraphics[page=4, scale= 0.5]{images/polyhierarchy2.pdf}}
+	\end{overprint}
+	\column{.5\textwidth}
+	\begin{itemize}
 		  \item Man sieht : $\sum_{1}^{p} = \NP$
 		  \item $\Pi_{i}^{p} := co\sum_{i}^{p}$
 		  \item $\sum_{i}^{p} \subseteq \Pi_{i+1}^{p} \subseteq \sum_{i+2}^{p}$
 		\end{itemize}
-	}
+	\end{columns}
 \end{frame}
 \begin{frame} 
 	\frametitle{Die Klasse $\PH$}
