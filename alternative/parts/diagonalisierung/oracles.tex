@@ -17,11 +17,15 @@
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Definition von Orakelmschinen}
+	\begin{itemize}
+		\item Werden zeigen, dass Diagonalisierung allein $\P/\NP$ Frage nicht beantworten kann
+		\item benötigen hierzu ein weitere Kategorie von Turingmaschinen. 
+	\end{itemize}
 	\begin{KITinfoblock}{Definition Orakel-Turingmaschine} {
 			Eine Orakel-Turingmaschine $M$ ist eine TM, die folgende zusätzliche Eigenschaften hat:
 			\begin{itemize}
 				\item<2-> ein spezielles zusätzliches Band (Orakelband) und 3 spezielle zusätzliche Zustände $q_{query}, q_{yes}, q_{no}$.
-				\item <3-> ein Orakel $O \subset \{0,1\}^*$
+				\item <3-> ein Orakel $O \subseteq \{0,1\}^*$
 				\item <4-> Wenn $M$ den Zustand $q_{query}$ betritt, ist der Folgezustand
 					\begin{itemize}
 					\item $q_{yes}$, wenn für Inhalt $s$ des Orakelbands gilt $s \in O$ und

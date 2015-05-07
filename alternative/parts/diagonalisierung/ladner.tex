@@ -50,8 +50,6 @@
 \begin{frame}
 	\frametitle{Satz von Ladner}
 	\framesubtitle{Beweis : Wahl von H}
-	Wir müssen nun also $H$ geschickt konstruieren !
-	\pause
 	\begin{KITinfoblock}{Definition von H}
 		\begin{itemize}
 		\item Betrachte die TM $M_1, M_2, ... M_{\lfloor \log(\log(n)) \rfloor}$. \newline
@@ -63,8 +61,7 @@
 		\end{itemize}
 	\end{KITinfoblock}
 	\pause
-	\bigskip
-	\begin{KITblock}{Eigenschaft, die wir von H wollen}
+	\begin{KITblock}{Gewähltes $H$ erfüllt die folgenden Eigenschaften}
 		${\SAT}_H \in \P \Leftrightarrow H(n) \in O(1)$ (also $H(n) \leq C$ f\"ur alle n) 				\newline
 		und damit insbesondere $\lim_{n \to \infty}  H(n) = \infty$ f\"ur ${\SAT}_H
 		\notin \P$
@@ -72,7 +69,7 @@
 	\pause
 	\begin{itemize}
 	  \item  $H$ erfüllt diese und ist polynomiell berechenbar.
-		  \item (ohne Beweis)
+	  \item (ohne Beweis)
 	\end{itemize}
 		
 \end{frame}
@@ -117,18 +114,22 @@
 % \end{frame}
 \begin{frame}{Beweis von Ladner}
 	\framesubtitle{${\SAT}_H$ weder in $\P$ noch  $\NP$-complete}
-	\begin{KITinfoblock}{Definition von ${SAT}_H$}
-		Für eine Funktion $H$ : $\mathbb{N} \rightarrow \mathbb{N}$ definieren wir : \newline 	
+	\begin{KITinfoblock}{Definition von ${\SAT}_H$} 	
 		${\SAT}_H = \lbrace \psi 01^{n^{H(n)}} : \psi \in \SAT$ und $ n = |\psi| \rbrace$
 	\end{KITinfoblock}
+	\bigskip
+	\begin{KITblock}{Gewähltes $H$ erfüllt die folgenden Eigenschaften}
+			${\SAT}_H \in \P \Leftrightarrow H(n) \in O(1)$ (also $H(n) \leq C$ f\"ur alle n) 		
+	\end{KITblock}
+	\pause
 	\bigskip
 	\heading{${\SAT}_H$ ist nicht in $\P$}
 	\pause
 	\bigskip
 	\begin{itemize}[<+->]
-		\item Angenommen ${\SAT}_H \in \P \Rightarrow $  $H(n) \le C$, $C$ Konstante wegen des gerade bewiesenen Lemmas
-		\item ${\SAT}_H$ ist also $\SAT$  mit höchsten $n^C$  angehänten 1en
-		\item $\SAT$ kann somit durch dieselbe TM gelöst werden $\Rightarrow \P = \NP$
+		\item Angenommen ${\SAT}_H \in \P \Rightarrow $  $H(n) \le C$, $C$ Konstante
+		\item ${\SAT}_H$ ist also $\SAT$  mit höchsten polynomiell vielen  angehängten 1en
+		\item $\SAT$ kann somit durch dieselbe TM wie ${\SAT}_H$ gelöst werden $\Rightarrow \P = \NP$
 	\end{itemize}
 	
 \end{frame}
@@ -136,22 +137,22 @@
 \begin{frame}{Beweis von Ladner}
 		\framesubtitle{${\SAT}_H$ weder in $\P$ noch $\NP$-complete}
 	
-		\begin{KITinfoblock}{Definition von ${\SAT}_H$}
-			Für eine Funktion $H$ : $\mathbb{N} \rightarrow \mathbb{N}$ definieren wir : \newline 	
+		\begin{KITinfoblock}{Definition von ${\SAT}_H$}	
 			${\SAT}_H = \lbrace \psi 01^{n^{H(n)}} : \psi \in \SAT$ und $ n = |\psi| \rbrace$
 		\end{KITinfoblock}
 		
 		
 		\bigskip
-		\only<2->{\heading{${\SAT}_H$ ist nicht $\NP$-complete}}
+		\only<2->{\heading{${\SAT}_H$ ist nicht in $\NPC$}}
 		
 		\bigskip
 		\pause
 		\begin{itemize}[<+->]
-		\item Angenommen ${\SAT}_H \in \NP-complete \Rightarrow $ es existiert poly. Reduktion $f$ von $\SAT$ auf ${\SAT}_H$ in $\mathcal{O}(n^i)$
+		\item Angenommen ${\SAT}_H \in \NPC \Rightarrow $ es existiert poly. Reduktion $f$ von $\SAT$ auf ${\SAT}_H$.
 		\item Da ${\SAT}_H \notin \P $ geht $H$ gegen $\infty$ 
-		\item $\SAT$-Instanz $\varphi$ wird mit $f$ auf ${\SAT}_H$-Instanz der Form $\psi01^{n^{H(n)}}$ abgebildet und mit $ f \in \mathcal{O}(n^i)$ folgt \newline
-		$|\psi| + {|\psi|}^{H(|\psi|)}$ und damit $|\psi| \in o(n)$
+		\item $\SAT$-Instanz $\varphi$ wird mit $f$ auf ${\SAT}_H$-Instanz der Form $\psi01^{{\psi}^{H(|\psi|)}}$ abgebildet und da $f$ polynomiell beschränkt, folgt wegen \newline
+		$|f(\varphi)|=|\psi| + {|\psi|}^{H(|\psi|)}$, dass $|\psi| \in o(n)$,
+		da sonst  ${|\psi|}^{H(|\psi|)}$ nicht polynomiell beschränkt sei kann.
 		\item Wegen $\psi| \in o(n)$ existiert dann ein Polynomialzeitalgorithmus für $\SAT$ und damit $\P = \NP$  $\Rightarrow$ Widerspruch! 
 		
 		\end{itemize}
