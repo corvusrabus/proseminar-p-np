@@ -51,10 +51,14 @@
 	Wir müssen nun also $H$ geschickt konstruieren !
 	\pause
 	\begin{KITinfoblock}{Definition von H}
-		$H(n)$ ist die kleinste Gödelnummer $i < \log (\log (n))$ so dass für alle
-		$ x \in \{0,1\}^*$ mit $|x| \leq \log(n) $ die Turing Maschine $M_i$ genau ${\SAT}_H(x)$
-		in $i|x|^i$ Schritten berechnet. Falls dieses $i$ nicht existiert setzen wir 
-		$H(n) = \log(\log(n))$ 
+		\begin{itemize}
+		\item Betrachte die TM $M_1, M_2, ... M_{\lfloor \log(\log(n)) \rfloor}$. \newline
+		\item Wähle unter diesen die TM $M_i$ mit kleinster Gödelnummer $i$, welche für alle
+		$|x| \leq \log(n) $  ${\SAT}_H(x)$
+		in $i|x|^i$ Schritten berechnet
+		\item Setze $H(n) = i$. 
+		\item Falls eine solche TM nicht existiert, setze $H(n) = \log(\log(n))$
+		\end{itemize}
 	\end{KITinfoblock}
 	\pause
 	\bigskip
