@@ -118,7 +118,7 @@
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Beweis : ${\P}^B \neq {\NP}^B$}
-	\begin{KITinfoblock}{Definition unäre Sprache $U_B$}
+	\begin{KITinfoblock}{Definition: unäre Sprache $U_B$}
 		Für eine Sprache B sei $U_B = \lbrace 1^n :$ Es gibt einen String
 		der L\"ange n in B $\rbrace $
 	\end{KITinfoblock}	
@@ -136,26 +136,15 @@
 	Wir konstruieren eine Folge von Sprachen $(B_i)_{i \in \mathbb{N}}$ so , dass 
 	$B = \lim_{i \to \infty} B_i$	
 	\begin{itemize}[<+->]
-		\item Wie stellen wir sicher, dass keine Turing Maschine $U_B$
-			in polynomieller Zeit entscheiden kann?
-		\item Tipp: Die Menge aller Turing Maschinen ist abzählbar
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Konstruktion von B}
-	\begin{itemize}[<+->]
-	\item Genau : Wir iterieren über alle Turing Maschinen $M_i$ und stellen
+	\item Dazu iterieren wir \"uber alle Turing Maschinen $M_i$ und stellen
 	sicher, dass $M_i$ nicht in polynomieller Zeit $U_B$ entscheiden kann
 	\item Nutze dabei, dass die Anzahl der Wörter exponentiell in der Eingabelänge wächst
 	\end{itemize}
 \end{frame}
-
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Konstruktion von B}
-	Wir fangen an mit $B_0 = \emptyset$. Konstruktion f\"r $B_i$ :
+	Wir fangen an mit $B_0 = \emptyset$. Konstruktion f\"ur $B_i$ :
 	\begin{itemize}[<+->]
 		\item Wähle n so , dass n größer als alle Strings in $B_{i-1}$
 		\item Lasse $M_i$ auf Eingabe $1^n$ genau $2^n / 10$ Schritte laufen \newline
