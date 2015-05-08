@@ -148,12 +148,29 @@
 		\bigskip
 		\pause
 		\begin{itemize}[<+->]
-		\item Angenommen ${\SAT}_H \in \NPC \Rightarrow $ es existiert poly. Reduktion $f$ von $\SAT$ auf ${\SAT}_H$.
-		\item Da ${\SAT}_H \notin \P $ geht $H$ gegen $\infty$ 
-		\item $\SAT$-Instanz $\varphi$ wird mit $f$ auf ${\SAT}_H$-Instanz der Form $\psi01^{{\psi}^{H(|\psi|)}}$ abgebildet und da $f$ polynomiell beschränkt, folgt wegen \newline
-		$|f(\varphi)|=|\psi| + {|\psi|}^{H(|\psi|)}$, dass $|\psi| \in o(n)$,
-		da sonst  ${|\psi|}^{H(|\psi|)}$ nicht polynomiell beschränkt sei kann.
-		\item Wegen $\psi| \in o(n)$ existiert dann ein Polynomialzeitalgorithmus für $\SAT$ und damit $\P = \NP$  $\Rightarrow$ Widerspruch! 
-		
+			\item Angenommen ${\SAT}_H \in \NPC \Rightarrow $ es existiert poly. Reduktion $f$ von $\SAT$ auf ${\SAT}_H$.
+			\item Da ${\SAT}_H \notin \P $ geht $H(n)$ gegen $\infty$ 
+			\item $\SAT$-Instanz $\varphi$ wird mit $f$ auf ${\SAT}_H$-Instanz der Form $\psi01^{{\psi}^{H(|\psi|)}}$ abgebildet.
+			\item $|f(\varphi)|=|\psi| + {|\psi|}^{H(|\psi|)}$
+		\end{itemize}
+\end{frame}
+\begin{frame}{Beweis von Ladner}
+	\framesubtitle{${\SAT}_H$ weder in $\P$ noch $\NP$-complete}
+	
+	\begin{KITinfoblock}{Definition von ${\SAT}_H$}	
+		${\SAT}_H = \lbrace \psi 01^{n^{H(n)}} : \psi \in \SAT$ und $ n = |\psi| \rbrace$
+	\end{KITinfoblock}
+		\begin{itemize}[<+->]
+	
+		\item Ab gewisser Größe müssen $\SAT$-Instanz $\varphi$ von $f$ auf ${\SAT}_H$-Instanz mit $|\psi| \in o(n)$  abgebildet werden.
+		 \newline 
+		Ansonsten wegen $H(n)$ gegen $\infty$ \newline $ \Rightarrow $$|\psi01^{|\psi|^{H(|\psi|)}} |$  nicht mehr polynomiell in Eingabegröße $\varphi$.
+		\item $|\psi|$ also echt kleiner als $\frac{|\varphi|}{2}$
+		\item Algorithmus der $\SAT$ in poly. Zeit entscheidet 
+			\begin{itemize}
+				\item bilde $\SAT$-Instanz $\varphi$ mit $f$ auf $\psi01^{|\psi|^{H(|\psi|)}}$ ab
+				\item $|\psi|$ kleiner $\frac{|\varphi|}{2}$ und es gilt $\varphi \in \SAT \Leftrightarrow \psi \in \SAT$ 
+				\item Wiederhole ersten Schritt mit $\psi$ als Eingabe
+			\end{itemize}
 		\end{itemize}
 \end{frame}
