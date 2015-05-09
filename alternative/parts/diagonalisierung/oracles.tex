@@ -94,17 +94,17 @@
 	\framesubtitle{Beweis : ${\P}^A = {\NP}^A$ }
 	\heading{Beweis des Satzes von Baker:} 
 	\begin{itemize} [<+->]
-		\item Sei $\mathbf{EXPCOM}$ folgende Sprache: \[\{(M,x,1^n) : M \  entscheidet \ x \ innerhalb \ von \ 2^n \ Schritten  \}
+		\item Sei $\mathbf{EXPCOM}$ folgende Sprache: \[\{(M,x,1^n) : M \  akzeptiert \ x \ innerhalb \ von \ 2^n \ Schritten  \}
 		 \] 
 			Dann gilt ${\P}^{\mathbf{EXPCOM}} = {\NP}^{\mathbf{EXPCOM}} = \EXP$.
 			\item $ \EXP \subseteq {\P}^{\mathbf{EXPCOM}} $
 			\begin{itemize}
 				\item TM $M$ entscheidet $L \in \EXP$
-				\item Baue Orakel-TM, die Orakel mit $(M,x,|x|)$ aufruft
+				\item Baue Orakel-TM, die Orakel mit $(M,x,q(|x|))$ aufruft
 			\end{itemize}
 			\item ${\NP}^{\mathbf{EXPCOM}} \subseteq \EXP$
 			\begin{itemize}
-				\item  $M$  nichtdet. TM mit Orakel $\mathbf{EXPCOM}$: 
+				\item  $M$  nichtdet. TM mit Orakel $\mathbf{EXPCOM}$ für $L \in {\NP}^{\mathbf{EXPCOM}} \subseteq \EXP$: 
 				\item Ausführung von $M$ det. in Exponentialzeit simulieren
 				\item Orakelaufruf in Exponentialzeit simulieren (max $2^{|x|} \cdot 2^{q(|x|)}$ Schritte)	
 			\end{itemize}
