@@ -2,7 +2,7 @@
 	\frametitle{Satz von Ladner}
 	\framesubtitle{Motivation}
 	\includegraphics[page = 2,scale = 0.6]{images/npi.pdf}
-	Frage : Gibt es $\NP$  Probleme , die nicht \NP -vollständig sind , aber auch
+	Frage : Gibt es $\NP$  Probleme, die nicht \NP -vollständig sind, aber auch
 	nicht in $\P$  liegen?
 \end{frame}
 \begin{frame}
@@ -52,7 +52,7 @@
 	\framesubtitle{Beweis : Wahl von $H$}
 	\begin{KITinfoblock}{Definition von $H$}
 		\begin{itemize}
-		\item Betrachte die TM $M_1, M_2, ... M_{\lfloor \log(\log(n)) \rfloor}$. \newline
+		\item Betrachte die TM $M_1, M_2, ..., M_{\lfloor \log(\log(n)) \rfloor}$. \newline
 		\item Wähle unter diesen die TM $M_i$ mit kleinster Gödelnummer $i$, welche für alle
 		$|x| \leq \log(n) $  ${\SAT}_H(x)$
 		in $i|x|^i$ Schritten berechnet
@@ -117,7 +117,6 @@
 	\begin{KITinfoblock}{Definition von ${\SAT}_H$} 	
 		${\SAT}_H = \lbrace \psi 01^{n^{H(n)}} : \psi \in \SAT$ und $ n = |\psi| \rbrace$
 	\end{KITinfoblock}
-	\bigskip
 	\begin{KITblock}{Gewähltes $H$ erfüllt die folgenden Eigenschaften}
 			${\SAT}_H \in \P \Leftrightarrow H(n) \in O(1)$ (also $H(n) \leq C$ f\"ur alle n) 		
 	\end{KITblock}
@@ -129,7 +128,12 @@
 	\begin{itemize}[<+->]
 		\item Angenommen ${\SAT}_H \in \P \Rightarrow $  $H(n) \le C$, $C$ Konstante
 		\item ${\SAT}_H$ ist also $\SAT$  mit höchsten polynomiell vielen  angehängten 1en
-		\item $\SAT$ kann somit durch dieselbe TM wie ${\SAT}_H$ gelöst werden $\Rightarrow \P = \NP$
+		\item $\SAT$ kann somit durch dieselbe TM wie ${\SAT}_H$ gelöst werden
+			\begin{itemize}
+				\item Konstruiere für Eingabe $\varphi$ die ${\SAT}_H$-Instanz $\varphi01^{|\varphi|^{H_(|\varphi|)}}$ 
+				\item gebe diese Instanz in TM, welche ${\SAT}_H$ polynomiell entscheidet
+			\end{itemize}
+			\item $\Rightarrow \P = \NP$
 	\end{itemize}
 	
 \end{frame}
@@ -144,14 +148,14 @@
 		
 		\bigskip
 		\only<2->{\heading{${\SAT}_H$ ist nicht in $\NPC$}}
-		
-		\bigskip
 		\pause
+		\bigskip
+		
 		\begin{itemize}[<+->]
 			\item Angenommen ${\SAT}_H \in \NPC \Rightarrow $ es existiert poly. Reduktion $f$ von $\SAT$ auf ${\SAT}_H$.
 			\item Da ${\SAT}_H \notin \P $ geht $H(n)$ gegen $\infty$ 
 			\item $\SAT$-Instanz $\varphi$ wird mit $f$ auf ${\SAT}_H$-Instanz der Form $\psi01^{{\psi}^{H(|\psi|)}}$ abgebildet.
-			\item $|f(\varphi)|=|\psi| + {|\psi|}^{H(|\psi|)}$
+			\item $|f(\varphi)|=|\psi| + |0| + {|\psi|}^{H(|\psi|)}$
 		\end{itemize}
 \end{frame}
 \begin{frame}{Beweis von Ladner}
@@ -161,10 +165,10 @@
 		${\SAT}_H = \lbrace \psi 01^{n^{H(n)}} : \psi \in \SAT$ und $ n = |\psi| \rbrace$
 	\end{KITinfoblock}
 		\begin{itemize}[<+->]
-	
-		\item Ab gewisser Größe müssen $\SAT$-Instanz $\varphi$ von $f$ auf ${\SAT}_H$-Instanz mit $|\psi| \in o(n)$  abgebildet werden.
-		 \newline 
-		Ansonsten wegen $H(n)$ gegen $\infty$ \newline $ \Rightarrow $$|\psi01^{|\psi|^{H(|\psi|)}} |$  nicht mehr polynomiell in Eingabegröße $\varphi$.
+		\item Für beliebig große $\SAT$-Instanz $\varphi$ wird $|\psi|$ in ${\SAT}_H$ beliebig groß.
+		\item $\Rightarrow$ ab gewisser Größe müssen $\SAT$-Instanz $\varphi$ von $f$ auf ${\SAT}_H$-Instanz mit $|\psi| \in o(n)$  abgebildet werden.
+		 
+		\item Ansonsten wegen $H(n)$ gegen $\infty$ \newline $|{|\psi|}^{H(|\psi|)}|$  und damit $ \Rightarrow|\psi01^{|\psi|^{H(|\psi|)}} |$  größer als jedes $p(|\varphi|)$.
 		\item $|\psi|$ also echt kleiner als $\frac{|\varphi|}{2}$
 		\item Algorithmus der $\SAT$ in poly. Zeit entscheidet 
 			\begin{itemize}
@@ -172,5 +176,6 @@
 				\item $|\psi|$ kleiner $\frac{|\varphi|}{2}$ und es gilt $\varphi \in \SAT \Leftrightarrow \psi \in \SAT$ 
 				\item Wiederhole ersten Schritt mit $\psi$ als Eingabe
 			\end{itemize}
+		\item Widerspruch zu $\P \neq \NP$
 		\end{itemize}
 \end{frame}

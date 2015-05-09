@@ -4,7 +4,7 @@
 	
 	\begin{KITinfoblock}{Definition	$\sum_{i}^{p} $ }
 		$\sum_{i}^{p} $ ist die Menge aller Sprachen L f\"ur die gilt : \newline
-		Es gibt deterministische polynomielle TM $M$ und ein Polynom $q$ so dass :
+		Es gibt deterministische polynomielle TM $M$ und ein Polynom $q$ so, dass :
 		\newline
 		
 		$x \in L \Leftrightarrow \exists u_1 \in {\lbrace 0,1 \rbrace }^{q(|x|)}$
@@ -12,8 +12,8 @@
 		$\ldots \mathcal{Q}_i u_i \in {\lbrace 0,1 \rbrace }^{q(|x|)}$
 		$M(x,u_1 ,\ldots , u_i) = 1$	\newline
 		
-		wobei $\mathcal{Q}_i$ entweder $\forall$ oder $\exists$ beschreibt,
-		abh\"angig davon ob $i$ gerade oder ungerade ist
+		gilt,wobei $\mathcal{Q}_i$ entweder $\forall$ oder $\exists$ beschreibt,
+		abh\"angig davon ob $i$ gerade oder ungerade ist.
 	\end{KITinfoblock}
 	\pause
 	\bigskip
@@ -50,7 +50,7 @@
 	\end{itemize}
 	\bigskip
 	\pause
-	\begin{KITinfoblock}{Satz Kollaps von $\PH$ und Auswirkungen auf $\P-\NP$}
+	\begin{KITinfoblock}{Satz: Kollaps von $\PH$ und Auswirkungen auf $\P-\NP$}
 		\begin{enumerate}[<+->]
 			\item Für alle $ i \geq 0$ gilt: $ \quad \sum_{i}^{p} = \prod_{i}^{p} \quad \Rightarrow \quad \PH = \sum_{i}^{p}$
 			\item Wenn $\P = \NP$, dann folgt $\PH = \P$
@@ -102,8 +102,11 @@
 			\item $L'$ ist in $\prod_{i-1}^{p}$ \quad (für $\overline{L'}$ alle Quantoren und $M$ negieren $\Rightarrow \overline{L'} \in \sum_{i-1}^{p}$)
 			\item Nach IV gilt: $ \quad \prod_{i-1}^{p} \in \P  \quad \Rightarrow \quad L' \in \P$
 			\item Damit ex. det. TM $M'$, die $L'$ in polynom. Zeit berechnet
+			\item Nach Konstruktion gilt: $x \in L \Leftrightarrow \exists u_1 \in \{0,1\}^{q(|x|)} (x,u_1) \in L'$
 			\item  \[x \in L \Leftrightarrow \exists u_1 \in \{0,1\}^{q(|x|)} M'(x,u_1) = 1 \] 
 			\item Damit $L \in \NP$ und da $\P = \NP$ vorausgesetzt, folgt $L \in \P$
+			\item Somit  $\sum_{i}^{p},\prod_{i}^{p} \subseteq \P$ für alle $i$
+			\item Also $\PH = \P$
 			\qed
 	\end{itemize}
 \end{frame}
@@ -118,7 +121,7 @@
 	
 	\begin{KITinfoblock}{Überlegung zur $\PH$ Vollst\"andigkeit}
 		Wenn eine $\PH$-vollst\"andige Sprache L existiert dann existiert ein $i$
-		so dass $\PH = \sum_{i}^{p}$
+		so, dass $\PH = \sum_{i}^{p}$
 	\end{KITinfoblock}
 	\bigskip
 	\pause

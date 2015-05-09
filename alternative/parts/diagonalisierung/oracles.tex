@@ -38,48 +38,7 @@
 \end{frame}
 \begin{frame} 
 	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Satz von Baker-Gill-Solovay}
-	\begin{KITinfoblock}{Komplexitätsklassen von Orakelmaschinen}
-		Für jedes $\mathbf{O} \subseteq \{0,1\}^*$ ist ${\P}^{\mathbf{O}}$ die Menge
-		aller Sprachen, die eine det. Orakel-TM mit Orakel $\mathbf{O}$ entscheiden
-		kann.
-		${\NP}^{\mathbf{O}}$ analog für nichtdet. Orakel-TM.
-		
-	\end{KITinfoblock}
-	\bigskip
-	\pause
-	\begin{KITinfoblock}{Satz (Baker,Gill,Solovay, 75)}
-		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
-	\end{KITinfoblock}
-\end{frame}
-\begin{frame}
-	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{relativierende Beweise}
-	\begin{KITinfoblock}{Satz (Baker,Gill,Solovay, 75)}
-		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
-	\end{KITinfoblock}
-	\bigskip
-	\begin{overprint}
-		\only<1-2>{
-		
-		\begin{KITinfoblock}{relativierende Beweise}
-			Wir nennen einen Beweis, der auch für TM mit Orakel gilt, einen \newline
-			\emph{relativierenden Beweis}
-		\end{KITinfoblock}
-		\begin{itemize}[<+->]
-		\item Diagonalisierung ist relativierend und kann damit nicht f\"ur die $\P
-		- \NP$ Frage genutzt werden.
-		\item $\Rightarrow$ ein Beweis für die $\P-\NP$ Frage muss ein nicht
-		relativierendes Verfahren nutzen !
-		\end{itemize}
-		}
-		
-	\end{overprint}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Beispiele für Orakelmaschinen}
+	\framesubtitle{Beispiel}
 	\heading{$\overline{\SAT}$}
 	\begin{itemize}[<+->]
 		\item   Für $\overline{\SAT}$, Sprache der nicht erfüllbaren Formeln, gilt
@@ -87,12 +46,59 @@
 		\item   Mit  Orakel $\SAT$ kann TM in $\mathcal{O}(1)$ entscheiden, ob
 		$\varphi \in \SAT$ und gegenteilige Antwort ausgeben.
 	\end{itemize}
+	
 \end{frame}
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{relativierende Beweise und Komplexitätsklassen}
+	\begin{KITinfoblock}{Komplexitätsklassen von Orakelmaschinen}
+		Für jedes $\mathbf{O} \subseteq \{0,1\}^*$ ist ${\P}^{\mathbf{O}}$ die Menge
+		aller Sprachen, die eine det. Orakel-TM mit Orakel $\mathbf{O}$ entscheiden
+		kann.
+		${\NP}^{\mathbf{O}}$ analog für nichtdet. Orakel-TM.
+		
+	\end{KITinfoblock}
+	\bigskip 
+	\pause
+	\begin{KITinfoblock}{relativierende Beweise}
+		Wir nennen einen Beweis, der auch für TM mit Orakel gilt, einen \newline
+		\emph{relativierenden Beweis}
+	\end{KITinfoblock}
+	\begin{itemize}[<+->]
+		\item Diagonalisierung ist relativierend
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Grenzen der Diagonalisierung}
+	\framesubtitle{Satz von Baker, Gill, Solovay}
+	\begin{KITinfoblock}{Satz (Baker, Gill, Solovay, 75)}
+		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
+	\end{KITinfoblock}
+	\bigskip
+	\pause
+		\begin{KITinfoblock}{relativierende Beweise}
+			Wir nennen einen Beweis, der auch für TM mit Orakel gilt, einen \newline
+			\emph{relativierenden Beweis}
+		\end{KITinfoblock}
+		\pause
+		\begin{itemize}[<+->]
+		\item Diagonalisierung ist relativierend und kann damit nicht f\"ur die $\P
+		- \NP$ Frage genutzt werden.
+		\item $\Rightarrow$ ein Beweis für die $\P-\NP$ Frage muss ein nicht
+		relativierendes Verfahren nutzen !
+		\end{itemize}
+		
+		
+	
+\end{frame}
+
+
 
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Beweis : ${\P}^A = {\NP}^A$ }
 	\heading{Beweis des Satzes von Baker:} 
+	\pause
 	\begin{itemize} [<+->]
 		\item Sei $\mathbf{EXPCOM}$ folgende Sprache: \[\{(M,x,1^n) : M \  akzeptiert \ x \ innerhalb \ von \ 2^n \ Schritten  \}
 		 \] 
@@ -104,7 +110,7 @@
 			\end{itemize}
 			\item ${\NP}^{\mathbf{EXPCOM}} \subseteq \EXP$
 			\begin{itemize}
-				\item  $M$  nichtdet. TM mit Orakel $\mathbf{EXPCOM}$ für $L \in {\NP}^{\mathbf{EXPCOM}} \subseteq \EXP$: 
+				\item  $M$  nichtdet. TM mit Orakel $\mathbf{EXPCOM}$ für $L \in {\NP}^{\mathbf{EXPCOM}}$: 
 				\item Ausführung von $M$ det. in Exponentialzeit simulieren
 				\item Orakelaufruf in Exponentialzeit simulieren (max $2^{|x|} \cdot 2^{q(|x|)}$ Schritte)	
 			\end{itemize}
@@ -119,8 +125,8 @@
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Beweis : ${\P}^B \neq {\NP}^B$}
 	\begin{KITinfoblock}{Definition: unäre Sprache $U_B$}
-		Für eine Sprache B sei $U_B = \lbrace 1^n :$ Es gibt einen String
-		der L\"ange n in B $\rbrace $
+		Für eine Sprache $B$ sei $U_B = \lbrace 1^n :$ Es gibt einen String
+		der L\"ange $n$ in $B$ $\rbrace $
 	\end{KITinfoblock}	
 	\pause
 	
@@ -146,14 +152,14 @@
 	\framesubtitle{Konstruktion von B}
 	Wir fangen an mit $B_0 = \emptyset$. Konstruktion f\"ur $B_i$ :
 	\begin{itemize}[<+->]
-		\item Wähle n so , dass n größer als alle Strings in $B_{i-1}$
+		\item Wähle $n$ so, dass $n$ größer als alle Strings in $B_{i-1}$
 		\item Lasse $M_i$ auf Eingabe $1^n$ genau $2^n / 10$ Schritte laufen \newline
-			(Beachte, dass $M_i$ das Orakel B hat!)
+			(Beachte, dass $M_i$ das Orakel $B$ hat!)
 	\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Konstruktion von B}
+	\framesubtitle{Konstruktion von $B$}
 	\begin{columns}
 	\column{.5\textwidth}
 	
@@ -179,11 +185,11 @@
 	  \item Wir definieren nun $B_{i+1}$ wie folgt :
 	  \item Wenn $M_i$ nicht gehalten hat : $B_{i+1} = B_i$
 	  \item ansonsten : \begin{itemize}
-	    \item $M_i$ akzeptiert $1^n$ : Wir definieren, dass kein String der Länge n
-	    in B ist
+	    \item $M_i$ akzeptiert $1^n$ : Wir definieren, dass kein String der Länge $n$
+	    in $B$ ist
 	    \item $M_i$ lehnt ab : Wähle $x \in {\lbrace 0,1 \rbrace}^n$, welches nicht
 	    von $M_i$ an gefragt wurde und setze $B_{i+1} = B_i \cup \lbrace x \rbrace$
-	    \item warum existiert dieses x?
+	    \item warum existiert dieses $x$?
 	    \end{itemize}
 	\end{itemize}
 \end{frame}
@@ -194,10 +200,10 @@
 	
 	\begin{itemize}[<+->]
 	  \item Haben oben ein gesehen, dass $U_B \in {\NP}^B$
-	  \item Und f\"ur jede polynomiell beschränkte TM M existiert ein i,so dass 
+	  \item Und f\"ur jede polynomiell beschränkte TM M existiert ein $i$,so dass 
 	  	\begin{itemize}
-	  	  \item M = $M_i$
-	  	  \item M auf der Eingabe $1^i$ weniger als $2^i / 10 $ Schritte benötigt
+	  	  \item $M$ = $M_i$
+	  	  \item $M$ auf der Eingabe $1^i$ weniger als $2^i / 10 $ Schritte benötigt
 	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^i \in U_B$ falsch
 	  	  beantwortet
 	  	 \end{itemize}
