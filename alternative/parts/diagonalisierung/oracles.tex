@@ -150,11 +150,11 @@
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Konstruktion von B}
-	Wir fangen an mit $B_0 = \emptyset$. Konstruktion f\"ur $B_i$ :
+	Wir fangen an mit $B_0 = \emptyset$. Konstruktion f\"ur $B_{i+1}$ :
 	\begin{itemize}[<+->]
-		\item Wähle $n$ so, dass $n$ größer als alle Strings in $B_{i-1}$
-		\item Lasse $M_i$ auf Eingabe $1^n$ genau $2^n / 10$ Schritte laufen \newline
-			(Beachte, dass $M_i$ das Orakel $B$ hat!)
+		\item Wähle $n$ so, dass $n$ größer als alle Strings in $B_i$
+		\item Lasse $M_i$ auf Eingabe $1^n$ genau $2^n / 10$ Schritte laufen
+		\newline (Beachte, dass $M_i$ das Orakel $B$ hat!)
 	\end{itemize}
 \end{frame}
 \begin{frame}
@@ -204,8 +204,8 @@
 	  	\begin{itemize}
 	  	  \item $M$ = $M_i$
 	  	  \item $M$ auf der Eingabe $1^i$ weniger als $2^i / 10 $ Schritte benötigt
-	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^i \in U_B$ falsch
-	  	  beantwortet
+	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^n \in U_B$ (f\"ur
+	  	  das in Schritt $i$ bestimmte $n$) falsch beantwortet
 	  	 \end{itemize}
 	  	\item $\Rightarrow U_B \notin {\P}^B$ und damit ${P}^B \neq {\NP}^B$ \qed
 	\end{itemize}
