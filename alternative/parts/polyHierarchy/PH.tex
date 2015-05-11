@@ -100,7 +100,8 @@
 	\framesubtitle{Beweis}
 		\begin{itemize}[<+->]
 			\item $L'$ ist in $\prod_{i-1}^{p}$ \quad (für $\overline{L'}$ alle Quantoren und $M$ negieren $\Rightarrow \overline{L'} \in \sum_{i-1}^{p}$)
-			\item Nach IV gilt: $ \quad \prod_{i-1}^{p} \in \P  \quad \Rightarrow \quad L' \in \P$
+			\item Nach IV gilt: $ \quad \prod_{i-1}^{p} \subseteq \P  \quad \Rightarrow
+			\quad L' \in \P$
 			\item Damit ex. det. TM $M'$, die $L'$ in polynom. Zeit berechnet
 			\item Nach Konstruktion gilt: $x \in L \Leftrightarrow \exists u_1 \in \{0,1\}^{q(|x|)} (x,u_1) \in L'$
 			\item  \[x \in L \Leftrightarrow \exists u_1 \in \{0,1\}^{q(|x|)} M'(x,u_1) = 1 \] 

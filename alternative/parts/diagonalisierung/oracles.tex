@@ -72,7 +72,8 @@
 	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Satz von Baker, Gill, Solovay}
 	\begin{KITinfoblock}{Satz (Baker, Gill, Solovay, 75)}
-		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
+		Es existieren Orakel A, B ,so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq
+		{\NP}^B$
 	\end{KITinfoblock}
 	\bigskip
 	\pause
@@ -200,12 +201,12 @@
 	
 	\begin{itemize}[<+->]
 	  \item Haben oben ein gesehen, dass $U_B \in {\NP}^B$
-	  \item Und f\"ur jede polynomiell beschränkte TM M existiert ein $i$,so dass 
+	  \item Und f\"ur jede polynomiell beschränkte TM M existiert ein $i$ (mit
+	  zugeh\"origem n aus Schritt i), so dass
 	  	\begin{itemize}
 	  	  \item $M$ = $M_i$
-	  	  \item $M$ auf der Eingabe $1^i$ weniger als $2^i / 10 $ Schritte benötigt
-	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^n \in U_B$ (f\"ur
-	  	  das in Schritt $i$ bestimmte $n$) falsch beantwortet
+	  	  \item $M$ auf der Eingabe $1^n$ weniger als $2^n / 10 $ Schritte benötigt
+	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^n \in U_B$ falsch beantwortet
 	  	 \end{itemize}
 	  	\item $\Rightarrow U_B \notin {\P}^B$ und damit ${P}^B \neq {\NP}^B$ \qed
 	\end{itemize}
