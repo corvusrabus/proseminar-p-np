@@ -38,7 +38,15 @@
 \end{frame}
 \begin{frame} 
 	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{Beispiel}
+	\framesubtitle{Orakel-Komplexitätsklassen + Beispiel}
+	\begin{KITinfoblock}{Komplexitätsklassen von Orakelmaschinen}
+		Für jedes $\mathbf{O} \subseteq \{0,1\}^*$ ist ${\P}^{\mathbf{O}}$ die Menge
+		aller Sprachen, die eine det. Orakel-TM mit Orakel $\mathbf{O}$ entscheiden
+		kann.
+		${\NP}^{\mathbf{O}}$ analog für nichtdet. Orakel-TM.
+		
+	\end{KITinfoblock}
+	\pause
 	\heading{$\overline{\SAT}$}
 	\begin{itemize}[<+->]
 		\item   Für $\overline{\SAT}$, Sprache der nicht erfüllbaren Formeln, gilt
@@ -50,36 +58,17 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Grenzen der Diagonalisierung}
-	\framesubtitle{relativierende Beweise und Komplexitätsklassen}
-	\begin{KITinfoblock}{Komplexitätsklassen von Orakelmaschinen}
-		Für jedes $\mathbf{O} \subseteq \{0,1\}^*$ ist ${\P}^{\mathbf{O}}$ die Menge
-		aller Sprachen, die eine det. Orakel-TM mit Orakel $\mathbf{O}$ entscheiden
-		kann.
-		${\NP}^{\mathbf{O}}$ analog für nichtdet. Orakel-TM.
-		
-	\end{KITinfoblock}
-	\bigskip 
-	\pause
-	\begin{KITinfoblock}{relativierende Beweise}
-		Wir nennen einen Beweis, der auch für TM mit Orakel gilt, einen \newline
-		\emph{relativierenden Beweis}
-	\end{KITinfoblock}
-	\begin{itemize}[<+->]
-		\item Diagonalisierung ist relativierend
-	\end{itemize}
-\end{frame}
-\begin{frame}
-	\frametitle{Grenzen der Diagonalisierung}
 	\framesubtitle{Satz von Baker, Gill, Solovay}
-	\begin{KITinfoblock}{Satz (Baker, Gill, Solovay, 75)}
-		Es existieren Orakel A, B so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq {\NP}^B$
-	\end{KITinfoblock}
-	\bigskip
-	\pause
 		\begin{KITinfoblock}{relativierende Beweise}
 			Wir nennen einen Beweis, der auch für TM mit Orakel gilt, einen \newline
 			\emph{relativierenden Beweis}
 		\end{KITinfoblock}
+	\bigskip
+	\pause
+	\begin{KITinfoblock}{Satz (Baker, Gill, Solovay, 75)}
+		Es existieren Orakel A, B , so dass ${\P}^A = {\NP}^A$ und ${\P}^B \neq
+		{\NP}^B$
+	\end{KITinfoblock}
 		\pause
 		\begin{itemize}[<+->]
 		\item Diagonalisierung ist relativierend und kann damit nicht f\"ur die $\P
@@ -200,12 +189,12 @@
 	
 	\begin{itemize}[<+->]
 	  \item Haben oben ein gesehen, dass $U_B \in {\NP}^B$
-	  \item Und f\"ur jede polynomiell beschränkte TM M existiert ein $i$,so dass 
+	  \item Und f\"ur jede polynomiell beschränkte TM M existiert ein $i$ (mit
+	  zugeh\"origem n aus Schritt i), so dass
 	  	\begin{itemize}
 	  	  \item $M$ = $M_i$
-	  	  \item $M$ auf der Eingabe $1^i$ weniger als $2^i / 10 $ Schritte benötigt
-	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^n \in U_B$ (f\"ur
-	  	  das in Schritt $i$ bestimmte $n$) falsch beantwortet
+	  	  \item $M$ auf der Eingabe $1^n$ weniger als $2^n / 10 $ Schritte benötigt
+	  	  \item und damit $M_i$ nach Konstruktion die Frage $1^n \in U_B$ falsch beantwortet
 	  	 \end{itemize}
 	  	\item $\Rightarrow U_B \notin {\P}^B$ und damit ${P}^B \neq {\NP}^B$ \qed
 	\end{itemize}
