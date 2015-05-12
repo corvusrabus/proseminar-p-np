@@ -82,7 +82,7 @@
 	\begin{itemize}[<+->]
 		\item \galert{IS}: Sei $L \in \sum_{i}^{p}$, dann ex. TM $M$ und Polynom $q$ so, dass \newline
 		\begin{align}
-			x \in L \Leftrightarrow  \exists u_1 \in \{0,1\}^{q(|x|)} &\forall u_2  \in \{0,1\}^{q(|x|)} ... \ Q_i u_i \in \{0,1\}^{q(|x|)}  \notag \\
+			x \in L \Leftrightarrow  \exists u_1 \in \{0,1\}^{q(|x|)} &\forall u_2  \in \{0,1\}^{q(|x|)} ... \ \mathcal{Q}_i u_i \in \{0,1\}^{q(|x|)}  \notag \\
 			&M(x,u_1,u_2,...,u_i)=1 \notag
 			(Definition)
 		\end{align}
@@ -90,16 +90,30 @@
 		\bigskip
 		\item Definiere Sprache $L'$
 		\begin{align}
-		(x,u_1) \in L' \Leftrightarrow \forall u_2 \in &\{0,1\}^{q(|x|)} ... \ Q_i u_i \in \{0,1\}^{q(|x|)} \notag \\ &M(x,u_1,u_2, ... u_i) = 1 \notag 
+		(x,u_1) \in L' \Leftrightarrow \forall u_2 \in &\{0,1\}^{q(|x|)} ... \ \mathcal{Q}_i u_i \in \{0,1\}^{q(|x|)} \notag \\ &M(x,u_1,u_2, ... u_i) = 1 \notag 
 		\end{align}
 	
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Die Klasse $\PH$}
+	\framesubtitle{Beweis}
+	\begin{itemize}[<+->]
+		\item $L'$ ist in $\prod_{i-1}^{p}$, denn
+		\begin{align}
+			(x,u_1) \in L' \Leftrightarrow \forall u_2 \in &\{0,1\}^{q(|x|)} ... \ \mathcal{Q}_i u_i \in \{0,1\}^{q(|x|)} \notag \\ &M(x,u_1,u_2, ... u_i) = 1 \notag 
+		\end{align}
+		\begin{align}
+			(x,u_1) \in \overline{L'} \Leftrightarrow \exists u_2 \in &\{0,1\}^{q(|x|)} ... \ \overline{\mathcal{Q}_i} u_i \in \{0,1\}^{q(|x|)} \notag \\ &\overline{M(x,u_1,u_2, ... u_i)} = 1 \notag 
+		\end{align}
+		\item Also $\overline{L'} \in \sum_{i-1}^{p}$ und damit folgt Behauptung.
 	\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Die Klasse $\Huge$}
 	\framesubtitle{Beweis}
 		\begin{itemize}[<+->]
-			\item $L'$ ist in $\prod_{i-1}^{p}$ \quad (für $\overline{L'}$ alle Quantoren und $M$ negieren $\Rightarrow \overline{L'} \in \sum_{i-1}^{p}$)
+			\item $L'$ ist in $\prod_{i-1}^{p}$
 			\item Nach IV gilt: $ \quad \prod_{i-1}^{p} \subseteq \P  \quad \Rightarrow
 			\quad L' \in \P$
 			\item Damit ex. det. TM $M'$, die $L'$ in polynom. Zeit berechnet
